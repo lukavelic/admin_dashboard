@@ -1,0 +1,324 @@
+:root {
+    --main-color: #0ea5e9;
+    --main-background-color: #e0e0e0;
+    --card-background-color: white;
+    --text-color: black;
+    --card-border-color: orange;
+    --shadow: 0 5px 10px -10px #000000;
+    --border-radius: 10px;
+    --title-font-size: 1.25rem;
+    --text-font-size: 1rem;
+    --title-font-weight: 900;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.site-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 200px minmax(calc(100vh - 200px), 1fr);
+}
+
+.header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-rows: 50px 130px;
+    padding-top: 20px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 5px 10px -10px #000000;
+    position: relative;
+}
+
+    .header-top {
+        display: grid;
+        grid-template-columns: 96px 4fr 96px 96px 130px;
+    }
+
+        .header-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-item.header-icon, .header-item.profile-photo {
+            justify-content: center;
+        }
+
+        .header-item.header-icon.search {
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+
+        #search-bar {
+            border: none;
+            border-radius: 10px;
+            height: 24px;
+            width: 70%;
+            padding-left: 10px;
+            background-color: var(--main-background-color);
+        }
+        #search-bar:focus {
+            outline: none;
+        }
+
+        .profile-photo > img {
+            height: 48px;
+        }
+
+        .profile-name {
+            padding-left: 10px;
+            font-weight: 900;
+        }
+    
+    .header-bottom {
+        display: grid;
+        grid-template-columns: 96px 4fr 100px 100px 100px;
+        margin-left: 52px;
+        margin-right: 39px;
+    }
+
+        .header-bottom > .profile-photo > img {
+            height: 70px;
+        }
+
+        .header-bottom > .profile-photo {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .header-item.display-name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .header-item.display-name > p {
+            margin: 5px;
+            white-space: nowrap;
+            font-weight: 900;
+        }
+
+        .header-item.display-name > p:last-child {
+            font-size: 1.5rem;
+        }
+
+        .header-item.button {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .header-item.button > button{
+            background-color: var(--main-color);
+            color: white;
+            height: 36px;
+            width: 80px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 900;
+        }
+
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: grid;
+    grid-template-rows: repeat(12, 50px);
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: 1rem;
+    font-weight: 900;
+    background-color: var(--main-color);
+    color: white;
+}
+    .sidebar-item {
+        display: grid;
+        grid-template-columns: 50px 200px;
+        gap: 10px;
+        font-size: 1.25rem;
+    }
+
+    .sidebar-item > .sidebar-icon {
+        display: flex;
+        justify-content: center;
+    }
+
+    .sidebar-item > p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    #dashboard {
+        font-size: 1.5rem;
+    }
+
+    #home {
+        grid-row: 3 / 4;
+    }
+
+    #profile {
+        grid-row: 4 / 5;
+    }
+
+    #messages {
+        grid-row: 5 / 6;
+    }
+
+    #history {
+        grid-row: 6 / 7;
+    }
+
+    #tasks {
+        grid-row: 7 / 8;
+    }
+
+    #communities {
+        grid-row: 8 / 9;
+    }
+
+    #settings {
+        grid-row: 10 / 11;
+    }
+
+    #support {
+        grid-row: 11 / 12;
+    }
+
+    #privacy {
+        grid-row: 12 / 13;
+    }
+
+.content {
+    background-color: var(--main-background-color);
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 7fr 300px;
+    gap: 20px;
+    padding: 20px;
+}
+
+    .content .projects {
+        display: grid;
+        grid-template-rows: 30px 1fr;
+        gap: 20px;
+    }
+
+    .content p#title, p#card-title {
+        margin: 0;
+        font-weight: 900;
+        font-size: 1.25rem;
+    }
+
+    .content p#title, p#card-small-title {
+        margin: 0;
+        font-weight: 900;
+        font-size: 1.25rem;
+    }
+
+    p#card-small-title {
+        margin: 0;
+        font-weight: 900;
+        font-size: 1rem;
+    }
+
+    .content .project-cards {
+        display: grid;
+        grid-template-rows: repeat(auto-fit, minmax(150px, 300px));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+    }   
+
+    .content .card {
+        display: grid;
+        grid-template-columns: 10px 1fr;
+        background-color: white;
+        border-radius: 10px;
+        overflow: none;
+        box-shadow: var(--shadow);
+    }
+
+    .content .card .card-border {
+        background-color: var(--card-border-color);
+        border-top-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+    }
+
+    .content .card .card-content {
+        display: grid;
+        grid-template-rows: 30px 1fr 30px;
+        margin: 20px;
+    }
+
+    .content .card .card-functionality, .content .card .card-functionality a {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .content .content-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content .content-sidebar .sidebar-card {
+        display: grid;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+    }
+
+    .content .content-sidebar .sidebar-card-content {
+        border-bottom: var(--main-background-color) 1px solid;
+        margin-bottom: 20px;
+    }
+
+    .content .content-sidebar .sidebar-card-content:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .content .content-sidebar #title {
+        height: 30px;
+        padding-bottom: 20px;
+        font-size: 1.25rem;
+    }
+
+    .content .content-sidebar #card-small-text {
+        font-size: 0.9rem;
+    }
+
+    .trending {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+    }
+
+    .trending-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 20px;
+    }
+
+    .trending-description {
+        font-style: italic;
+        font-size: 0.8rem;
+    }
+
+    .trending-cards {
+        gap: 20px;
+    }
